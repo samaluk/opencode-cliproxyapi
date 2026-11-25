@@ -20,7 +20,8 @@
     "model discovery"
   ],
   "dependencies": {
-    "@ai-sdk/openai-compatible": "^2.0.94"
+    "@ai-sdk/openai-compatible": "^2.0.94",
+    "@opencode/plugin": "^2.3.2"
   },
   "repository": {
     "type": "git",
@@ -35,8 +36,7 @@
   },
   "packageManager": "bun@1.4.5",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target node --packages external",
@@ -45,15 +45,6 @@
   },
   "devDependencies": {
     "@types/bun": "1.4.5",
-    "typescript": "5.9.3",
-    "@opencode/plugin": "2.3.2"
-  },
-  "peerDependencies": {
-    "@opencode/plugin": "^2.3.2"
-  },
-  "peerDependenciesMeta": {
-    "@opencode/plugin": {
-      "optional": true
-    }
+    "typescript": "5.9.3"
   }
 }

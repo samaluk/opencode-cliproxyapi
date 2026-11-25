@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
-import type { Model, Plugin, Provider } from "@opencode/plugin";
+import { Plugin, type Model, type Provider } from "@opencode/plugin";
 import {
   createDiscovery, defaultCacheDir, gatewayFetch, providerID, resolveConnection, stringOption,
   warnOnDiscoveryStatus, type Catalog, type CatalogModel, type Fetch,
@@ -39,8 +39,7 @@ function intervalMs(option: unknown): number {
   return Math.max(60_000, Math.round(option * 1_000));
 }
 
-// This is the V2 Promise plugin shape. Plugin.define itself only returns the object.
-const plugin: Plugin.Plugin = {
+export default Plugin.define({
   id: packageName,
   async setup(ctx) {
     const options = ctx.options;
@@ -121,6 +120,4 @@ const plugin: Plugin.Plugin = {
       await pending;
     };
   },
-};
-
-export default plugin;
+});
