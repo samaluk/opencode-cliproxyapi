@@ -1,0 +1,59 @@
+{
+  "name": "@samaluk/opencode-cliproxyapi",
+  "version": "0.1.0",
+  "description": "Live CLIProxyAPI model discovery for OpenCode 2",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "cliproxyapi",
+    "model discovery"
+  ],
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^2.0.94"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samaluk/opencode-cliproxyapi.git"
+  },
+  "homepage": "https://github.com/samaluk/opencode-cliproxyapi#readme",
+  "bugs": {
+    "url": "https://github.com/samaluk/opencode-cliproxyapi/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "bun@1.4.5",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node --packages external",
+    "check": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.5",
+    "typescript": "5.9.3",
+    "@opencode/plugin": "2.3.2"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": "^2.3.2"
+  },
+  "peerDependenciesMeta": {
+    "@opencode/plugin": {
+      "optional": true
+    }
+  }
+}
